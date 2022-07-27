@@ -6,11 +6,19 @@
 // Input: A[] = {-8, -3, -10, -32, -1}
 // Output: Maximum: -1, Minimum: -32
 
-// Big O Notation: O(n log(n)) time complexity
+// Big O Notation: O(n) time complexity
 
-const findMinMax = (arr) => {
-  arr.sort((a,b) => a-b)
-  console.log(arr)
-  return {"Maximum": arr[0], "Minimum": arr[arr.length -1]}
+const findMinMax2 = (arr) => {
+  let maxNum = arr[i]
+  let minNum = arr[i]
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] > maxNum){
+      maxNum = arr[i]
+    }
+    if(arr[i] < minNum){
+      minNum = arr[i]
+    }
+  }
+  return [minNum, maxNum]
 }
 console.log(findMinMax([4, 2, 0, 8, 20, 9, 2]));
