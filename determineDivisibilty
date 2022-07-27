@@ -13,7 +13,7 @@ x = 3.
 output: [false, true, false, true, true]. 
 
 #### Big O notation:
-<p>O(n) because the array map method iterates through each element in the array</p> 
+O(n) because the array map method iterates through each element in the array
 
 #### Function
     const determineDivisbility = (array, x) => {
