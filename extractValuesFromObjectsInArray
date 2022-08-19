@@ -1,0 +1,42 @@
+let input = [
+  { name: "John", age: 21, city: "New York" },
+  { name: "Mike", age: 28, city: "Moscow" },
+  { name: "Danny", age: 30, city: "London" },
+  { name: "Lisa", age: 26, city: "Paris" },
+  { name: "Sophie", age: 19, city: "Berlin" },
+];
+
+// For this challenge, the value of the “name” property from every object should be extracted and stored in an array. The output should be like the following: ["John", "Mike", "Danny", "Lisa", "Sophie"];
+
+/* how to extract a value of an object that is in an array
+use map method or loop
+*/
+//map method
+// const extractedValue = (array, prop) => {
+//   let result = array.map(object => object[prop])
+//   return result
+// }
+
+// console.log(extractedValue(input, "name"))
+
+//using a traditional for loop
+//Big O notation O(n) 
+// const extractedValue = (array, prop) => {
+//   let namesArray = [];
+//   for(let i = 0; i < array.length; i++){
+//    namesArray.push(array[i][prop])
+//   }
+//   return namesArray;
+// }
+// console.log(extractedValue(input, "name"))
+
+//using a for of loop
+//Big O notation O(n)
+const extractedValue = (array, prop) => {
+  let namesArray = [];
+  for(const item of array){
+   namesArray.push(item[prop])
+  }
+  return namesArray;
+}
+console.log(extractedValue(input, "name"))
