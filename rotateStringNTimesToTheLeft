@@ -1,0 +1,27 @@
+// Rotate the String k Times in the Left Direction
+//outout "vascriptja"
+
+/*
+chang string into an array
+use substring method
+slice from n to the end of the string creating a "baseString"
+slice from beginning of string to n where n is the number of characters
+concatenate the baseString and slices and store in a var called slicedString
+return slicedString
+Big O notation O(n)^2
+substring for baseString: O(n)
+substring for slices: O(n)
+Big O notation O(n)^2
+substring for baseString: O(n)
+substring for slices: O(n)
+*/
+let string = "javascript"
+let n = 2
+const stringSlicer = (string, n) => {
+  let baseString = string.substring(n,string.length);
+  let slices = string.substring(0, n);
+  let slicedString = baseString.concat(slices);
+  return slicedString;
+}
+
+console.log(stringSlicer(string, n))
