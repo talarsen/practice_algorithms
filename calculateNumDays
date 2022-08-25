@@ -1,0 +1,31 @@
+/*Calculate the Number of Days Between Two Dates
+define 2 date objects from date1 and date2 using the new Date() method
+figure out the difference between the two dates which gives you milliseconds
+convert the milliseconds to days with this formula
+(1000 milliseconds * (60 seconds * 60 minutes) * 24 hours)
+check to see if date1 is larger than date 2 before subtracting to avoid negative numbers
+
+take the difference and divide (1000 * 3600 * 24)
+store the result in a new variable called totalDays 
+
+*/
+
+//input
+let date1 = "08/10/2021";
+let date2 = "09/11/2021"
+
+const calculateNumDays = (date1, date2) => {
+
+let date_1 = new Date(date1);
+let date_2 = new Date(date2);
+
+let difference;
+  if(date_1 > date2) {
+   difference =  date_1.getTime() - date_2.getTime();
+  } else {
+    difference = date_2.getTime() - date_1.getTime();
+  }
+let TotalDays = Math.ceil(difference / (1000 * 3600 * 24));
+return (TotalDays + ' days'); 
+}
+console.log(calculateNumDays(date1, date2))
