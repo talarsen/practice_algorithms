@@ -1,0 +1,32 @@
+/*  Is the string balanced? This means that each parenthesis, bracket, or brace in the string has a matching pair. For example, the string “( )” would be a valid pair, while the string “([)]” would not be a valid pair.
+when we find an opening bracket in the string we will push it onto the stack. 
+otherwise the stack length will be equal to zero when we reach the end of string and the function will return false
+//this next part compares the brackets
+then if the character is in the matchingBrackets object pop off the last element in the stack and call that value matchingBracket
+If  matchingBracket is not equal to value in the matchingBrackets value then return false
+Big O notation: O(n)
+*/
+
+const isValid = (str) => {
+  const openingBrackets = "([{";
+  const matchingBrackets = {
+    ")": "(",
+    "]": "[",
+    "}": "{"
+  }
+  
+  const stack = [];
+  for(const char of str){
+    if(openingBrackets.includes(char)){
+      stack.push(char)
+    }
+    else if(char in matchingBrackets){
+      const matchingBracket = stack.pop();
+      if(matchingBracket !== matchingBrackets[char]){
+        return false
+      }
+    }
+  }
+ return stack.length === 0;
+}
+console.log(isValid("}}}"))
