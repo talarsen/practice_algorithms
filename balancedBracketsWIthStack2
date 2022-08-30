@@ -1,0 +1,23 @@
+
+//Big O notation O(n)
+
+const balanceBrackets = (string) => {
+  let stack = [];
+  let lastRemoved = null;
+  for(let bracket of string){
+    if( bracket === "(" ||
+        bracket === "{" ||
+        bracket === "["){
+      stack.push(bracket)
+    } else if ( bracket === ")" ||bracket === "}" || bracket === "]"){
+      lastRemoved = stack.pop() 
+    } if ( bracket === "}" && lastRemoved !== "{" ||
+           bracket === "]" && lastRemoved !== "[" ||
+           bracket === ")" && lastRemoved !== "("){
+      return false
+    }
+  }
+  return stack.length > 0 ? false:true
+}
+console.log(balanceBrackets("{[[]}"))
+
