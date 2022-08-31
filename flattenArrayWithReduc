@@ -1,0 +1,14 @@
+Flatten an Array
+Using reduce(), you can transform a multidimensional array into a one-dimensional collection.
+var rows = [[2, 3, 5], [1, 2, 4], [8, 5, 5]]
+Big O Notation: O(n)
+*/
+var rows = [[2, 3, 5], [1, 2, 4], [8, 5, 5]]
+
+const flattenArray = (array) => {
+  let temp = array.reduce((acc, val) => {
+    return acc.concat(val)
+  }, [])
+  return temp
+}
+console.log(flattenArray(rows))
