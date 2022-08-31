@@ -1,0 +1,21 @@
+// reverseString
+// Big O Notation: O(n)
+let myString = "Lucy"
+const reverseString = (string) => {
+  let stringToArray = string.split("");
+  let newArray = [];
+  for(let i = stringToArray.length -1; i >= 0; i--){
+    newArray.push(stringToArray[i]);
+  }
+  let reverseString = newArray.join("");
+  return reverseString;
+}
+console.log(reverseString(myString))
+
+const reverseStringWithReverse = (string) => {
+  let newStringArray = string.split("")
+  newStringArray.reverse();
+  let newString = newStringArray.join("");
+  return newString;
+}
+console.log(reverseStringWithReverse(myString))
