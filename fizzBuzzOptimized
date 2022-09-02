@@ -1,0 +1,43 @@
+/*You need to write a program that prints the numbers from 1 to 100 such that:
+
+If the number is a multiple of 3, you need to print "Fizz" instead of that number.
+If the number is a multiple of 5, you need to print "Buzz" instead of that number.
+If the number is a multiple of both 3 and 5, you need to print "FizzBuzz" instead of that number.
+ */
+
+// const printFizzBuzz = () => {
+//   i = 1
+//   while(i <= 100){
+//     if(i % 3 === 0 && i % 5 === 0){
+//       console.log("fizzBuzz");
+//     } else if(i % 3 === 0){
+//       console.log("fizz");
+//     } else if(i % 5 === 0){
+//       console.log("buzz");
+//     } else {
+//       console.log(i);
+//     }
+//     i++
+//   }
+// }
+//console.log(printFizzBuzz());
+
+//optimized
+const printFizzBuzz = () => {
+  i = 1
+  while(i <= 100){
+    let result = "";
+    if ( i % 3 === 0) {
+      result += "fizz";
+    }
+    if ( i % 5 === 0){
+      result += "buzz";
+    }
+    if (result == "") {
+      result = i.toString();
+    }
+    console.log(result)
+    i++
+  }
+}
+console.log(printFizzBuzz());
