@@ -1,0 +1,17 @@
+/*Write a function that takes an object (a) and a string (b) as argument
+Return true if the object has a property with key 'b'
+Return false otherwise
+Tipp: test case 3 is a bit tricky because the value of property 'z' is undefined
+But the property itself exists 
+use the in operator... value doesn't matter
+*/
+
+
+const determineIfKeyIsPresent = (a,b) => {
+  if(b in a){
+    return true
+  } else {
+    return false
+  }
+}
+console.log(determineIfKeyIsPresent({a:1,b:2,c:undefined},'c'))
