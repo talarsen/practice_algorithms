@@ -1,0 +1,17 @@
+/* Write a function that takes a string (a) as argument
+Remove the first 3 characters of a
+Return the result */
+
+/****using substring ******/
+const removeCharacters = (string) => {
+  return string.substring(3)
+}
+console.log(removeCharacters("abcdefgh"))//defgh
+console.log(removeCharacters('1234'))//defgh
+
+/****using slice ******/
+const removeCharactersWithSlice = (string) => {
+  return string.slice(3)
+}
+console.log(removeCharactersWithSlice("abcdefgh"))//defgh
+console.log(removeCharactersWithSlice('1234'))//defgh
