@@ -1,0 +1,11 @@
+/*Write a function that takes a string (a) and a number (n) as argument
+Return the nth character of 'a'
+Big O Notation: O(1) */
+
+const returnNthCharacter = (a,b) =>{
+  return a[b-1]
+  
+}
+console.log(returnNthCharacter('zyxbwpl',5))
+console.log(returnNthCharacter('gfedcba',3))
+
