@@ -1,0 +1,11 @@
+/*Write a function that takes an object (a) and a string (b) as argument
+Return true if the object has a property with key 'b', but only if it has a truthy value
+In other words, it should not be null or undefined or false
+Return false otherwise
+The Boolean function transforms a truthy value to true, and false otherwise*/
+const checkObject = (a,b) => {
+  let value = a[b];
+  return Boolean(value)
+}
+console.log(checkObject({a:1,b:2,c:3},'b'))//true
+console.log(checkObject({x:'a',y:null,z:'c'},'y'))//false
