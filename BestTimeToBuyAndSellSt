@@ -1,0 +1,17 @@
+const prices1 = [7,1,5,3,6,4]
+const prices2 = [7,6,4,3,1] 
+const largestProfit = (prices) => {
+  let minPrice = Infinity;//
+  let maxProfit = 0;
+
+  for(let i =0; i < prices.length; i++){
+    if(prices[i] < minPrice){
+     minPrice = prices[i]
+    } else {
+        maxProfit = Math.max(maxProfit, prices[i] - minPrice)
+    }
+  }
+  return maxProfit
+};
+console.log(largestProfit(prices1))
+//console.log(largestProfit(prices2))
