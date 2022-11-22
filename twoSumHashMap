@@ -1,0 +1,16 @@
+/*Given an array of integers, return indices of the two numbers such that they add up to specific target. Assume that there exists exactly one solution, and that you may not use the same element twice.*/
+
+const findTwoSum = (arr, target) => {
+  let map = new Map();
+  for(let i = 0; i< arr.length; i++){
+    let num1 = arr[i];
+    let num2 = target - num1;
+    if(map.has(num2)) {
+      return [i, map.get(num2)]
+    } else {
+      map.set(num1, i)
+    }
+  }
+}
+console.log(findTwoSum([2,5,7,8,4], 9));
+console.log(findTwoSum([3,3], 6));
