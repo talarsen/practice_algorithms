@@ -1,0 +1,17 @@
+const findTwoSum = (array, target) => {
+  const seen = new Map();
+//Keep track on the number we've seen while iterating over the array
+  for(let num of array){
+    //complement is the number that will sum up to the target number when added to the current number we are considering
+    const complement = target - num
+    if(seen.has(complement)){
+      return [num, complement]
+    } else {
+      seen.set(num)
+    }
+  }
+  return [];
+}
+console.log(findTwoSum([2,5,7,11], 9))
+console.log(findTwoSum([3,3], 6))
+console.log(findTwoSum([6,4,5,6], 12))
