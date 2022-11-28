@@ -1,0 +1,11 @@
+const maxValue = (nums) => {
+let max = -Infinity
+  for(let num of nums){
+    if(num > max){
+      max = num
+    }
+  }
+  return max
+};
+
+maxValue([10, 5, 40, 40.3])
