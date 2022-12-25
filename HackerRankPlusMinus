@@ -1,0 +1,21 @@
+const arr = [1,1,0,-1,-1]
+const arr2 = [-4, 3, -9, 0, 4, 1]
+const arr3 = [1, 2, 3, -1, -2, -3, 0, 0]
+function plusMinus(arr) {
+  let n = arr.length;
+  
+  let zeroArray = arr.filter(num => num == 0)
+  let calculateZero = (zeroArray.length/arr.length).toFixed(6);
+  
+  let positiveArray = arr.filter(num => num >= 1)
+  let calculatePositive = (positiveArray.length/arr.length).toFixed(6);
+  
+  let negativeArray = arr.filter(num => num < 0)
+  let calculateNegative = (negativeArray.length/arr.length).toFixed(6);
+  
+  console.log(calculatePositive)
+  console.log(calculateNegative) 
+  console.log(calculateZero)
+}
+
+console.log(plusMinus(arr3))
