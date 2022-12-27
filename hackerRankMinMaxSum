@@ -1,0 +1,23 @@
+/*Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers.
+Then print the respective minimum and maximum values as a single line of two space-separated long integers.*/
+
+let arr = [1,5,7,3,9];
+let arr2 = [1,2,3,4,5];
+let arr3 = [1,10,3,0,5];
+
+function miniMaxSum(arr) {
+  let sumMin = 0;
+  let sumMax = 0;
+   let sortedArray = arr.sort((a,b) => a-b);
+   
+   for(let i = 0; i <= 3; i++){
+     sumMin += sortedArray[i] 
+   }
+  
+  for(let i = 4; i >= 1; i--){
+     sumMax += sortedArray[i] 
+   }
+   
+  console.log(sumMin, sumMax)
+}
+miniMaxSum(arr3)
