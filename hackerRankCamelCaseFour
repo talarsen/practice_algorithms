@@ -1,0 +1,63 @@
+let input = 
+` 
+S;V;iPad
+S;M;plasticCup()
+S;C;OrangeHighlighter
+C;M;mouse pad
+C;C;code swarm
+C;V;mobile phone`
+
+
+function processData(input) {
+  let formattedInput = input.split(/\r?\n/);
+  
+  for(let i = 0; i < formattedInput.length; i++){
+    if(formattedInput[i][0] == "S" && formattedInput[i][2] == "M")  {
+      let methodString = formattedInput[i].slice(4)
+      let spacedMethod = methodString.replace(/[A-Z]/g, ' $&').trim();
+      let newMethod = spacedMethod.toLowerCase().slice(0,-2);
+      console.log(newMethod)
+    }
+    if(formattedInput[i][0] == "S" && formattedInput[i][2] == "V") {
+      let variableString = formattedInput[i].slice(4)
+      let spacedVariable = variableString.replace(/[A-Z]/g, ' $&').trim();
+      let finalSpacedVariable = spacedVariable.toLowerCase();
+      console.log(finalSpacedVariable)
+    }   
+    if(formattedInput[i][0] == "S" && formattedInput[i][2] == "C" ){
+      let classString = formattedInput[i].slice(4)
+      let spacedClass = classString.replace(/[A-Z]/g, ' $&').trim();
+      let trimFront = spacedClass.slice(0) 
+      let classResult = trimFront.toLowerCase();
+    console.log(classResult) 
+    }
+    if(formattedInput[i][0] == "C" && formattedInput[i][2] == "M" ){
+     let methodString = formattedInput[i].slice(4)
+      let methodArray = methodString.split(" ")
+      for (let i = 1; i < methodArray.length; i++) {
+      methodArray[i] = methodArray[i][0].toUpperCase() + methodArray[i].substr(1)
+      }
+      let stringArray = methodArray.join("").concat("()")
+       console.log(stringArray)
+    }  
+    if(formattedInput[i][0] == "C" && formattedInput[i][2] === "V"){
+    let variableString = formattedInput[i].slice(4)
+    let variableArray = variableString.split(" ")
+    for (let i = 1; i < variableArray.length; i++) {
+   variableArray[i] = variableArray[i][0].toUpperCase() + variableArray[i].substr(1) 
+  }
+   let stringArray = variableArray.join("")
+   console.log(stringArray)
+    }
+   if(formattedInput[i][0] == "C" && formattedInput[i][2] === "C"){
+      let classString = formattedInput[i].slice(4)
+      let classArray = classString.split(" ")
+      for (let i = 0; i < classArray.length; i++) {
+      classArray[i] = classArray[i][0].toUpperCase() + classArray[i].substr(1)   
+      }
+      let stringArray = classArray.join("")
+      console.log(stringArray)
+   }
+  }
+}
+processData(input)
