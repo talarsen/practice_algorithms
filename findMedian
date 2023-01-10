@@ -1,0 +1,28 @@
+/*
+Make sure there are elements in the array.
+
+Sort the array.
+
+find the midpoint of the array by dividing the length of the array by 2.
+
+Calculate the median:
+
+If the result is odd, the median is at array position middle.
+
+If the result is even, add the middle and the middle-1 array positions and divide by 2.
+*/
+
+let arr = [5,3,2,1,4]
+let n = 5;
+function findMedian(arr) {
+  if (arr.length == 0) {
+    return "empty array"
+  }
+
+  let sortedArray =   arr.sort((a,b)=> a - b)// [1,2,3,4,5,6]
+ 
+  let middle = Math.floor(n / 2);
+  const median = n % 2 === 0 ? (sortedArray[middle -1] + sortedArray[middle]) / 2  : sortedArray[middle]
+  return median
+}
+findMedian(arr, n)
