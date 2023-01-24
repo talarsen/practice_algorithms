@@ -1,0 +1,12 @@
+function titleCase(str) {
+  const lowerCaseStr = str.toLowerCase();
+  const lowerCaseArray = lowerCaseStr.split(" ")
+  const updatedArray = [];
+  for(let word in lowerCaseArray){
+    updatedArray[word] = lowerCaseArray[word][0].toUpperCase() + lowerCaseArray[word].slice(1).toLowerCase(); 
+  }
+  return updatedArray.join(" ")
+}
+
+titleCase("I'm a little tea pot");
+//titleCase("I'm A LITTLE tea poT");
