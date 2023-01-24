@@ -1,0 +1,14 @@
+function sumAll(arr) {
+  let smallestNum = Math.min(...arr)
+  let largestNum = Math.max(...arr)
+  let sumBetween = 0;
+   for(let i = smallestNum; i <= largestNum; i++){ 
+     sumBetween += i
+   }
+   return sumBetween
+}
+
+sumAll([1, 4]);
+/*
+Big O Notation: O(n)
+*/
