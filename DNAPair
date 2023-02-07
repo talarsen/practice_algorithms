@@ -1,0 +1,28 @@
+function pairElement(str) {
+  let finalArr = [];
+  let pairArr = [];
+for(let i = 0; i < str.length; i++){
+    switch(str[i]){
+        case "A":
+        pairArr = ["A", "T"];
+        finalArr.push(pairArr);
+        break;
+      case "T":
+        pairArr = ["T", "A"];
+        finalArr.push(pairArr);
+        break;
+      case "C":
+        pairArr = ["C", "G"];
+        finalArr.push(pairArr);
+        break;
+      case "G":
+        pairArr = ["G", "C"];
+        finalArr.push(pairArr);
+        break;
+    }
+  }
+    return finalArr  
+}
+
+pairElement("TTGAG")
+//should return [["T","A"],["T","A"],["G","C"],["A","T"],["G","C"]]
