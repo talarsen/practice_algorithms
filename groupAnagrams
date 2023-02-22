@@ -1,0 +1,16 @@
+strs = ["eat","tea","tan","ate","nat","bat"];
+
+const groupAnagrams = (str) => {
+  let strMap = new Map();
+  str.forEach(str => {
+    let alphaStr = str.split("").sort().join("")
+    if(strMap.has(alphaStr)){
+      strMap.get(alphaStr).push(str)
+    } else {
+      strMap.set(alphaStr, [str])
+    }
+  })
+  
+  return Array.from(strMap.values());
+}
+groupAnagrams(strs);
