@@ -1,0 +1,24 @@
+const translatePigLatin = (str) => {
+  let vowelArr = ["a","e","i","o","u"];
+  let newString = "";
+  if(vowelArr.includes(str[0])){
+    newString = `${str}ay`
+      console.log("vowel", newString)
+  }
+  if(!vowelArr.includes(str[0]) && !vowelArr.includes(str[1])) {
+      let slicedString = str.slice(2,str.length)
+      console.log("sliced",slicedString)
+      newString = `${slicedString}${str[0]}${str[1]}ay`
+      console.log("no vowel con blend",newString)
+      }
+  if (!vowelArr.includes(str[0]) && vowelArr.includes(str[1])){
+      let slicedString = str.slice(1,str.length)
+      console.log("sliced",slicedString)
+      newString = `${slicedString}${str[0]}${str[1]}ay`
+      console.log("no vowel",newString)
+    }
+  
+  console.log(newString)
+}
+
+translatePigLatin("consonant");
