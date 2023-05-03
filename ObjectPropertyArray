@@ -1,0 +1,23 @@
+/* For this challenge, the value of the “name” property from every object should be extracted and stored in an array. The output should be like the following: 
+
+["John", "Mike", "Danny", "Lisa", "Sophie"];
+*/
+
+
+
+let input = [
+  { name: "John", age: 21, city: "New York" },
+  { name: "Mike", age: 28, city: "Moscow" },
+  { name: "Danny", age: 30, city: "London" },
+  { name: "Lisa", age: 26, city: "Paris" },
+  { name: "Sophie", age: 19, city: "Berlin" },
+];
+
+const createNameArray = (input) => {
+	let nameArray = [];
+	for(let i = 0; i < input.length; i++){
+		nameArray.push(input[i].name)
+	}
+	return nameArray
+}
+console.log(createNameArray(input));
