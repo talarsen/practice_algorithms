@@ -1,0 +1,21 @@
+/*Along with Numbers, strings are the most commonly used data types in Javascript. An experienced JavaScript developer should know how to work with strings and should have the proper knowledge of in-built string functions.
+
+A string along with a number will be the input. 
+
+let string = "javascript"
+let n = 2
+According to the above input, the given string should be rotated two times in the left direction. Following should be the output. 
+
+"vascriptja"
+*/
+
+let string = "javascript"//ascriptjav
+let n = 3
+const rotateString = (str, n) =>{
+	let strArr = str.split("")
+	let splice = strArr.splice(0,n)
+	let someArr = strArr + splice
+	let finalStr = someArr.replaceAll(",", "")
+	return finalStr
+}
+console.log(rotateString(string, n))
